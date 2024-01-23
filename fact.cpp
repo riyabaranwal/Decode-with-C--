@@ -5,5 +5,5 @@ int fact(int n){
     return n*fact(n-1);
 }
 int main(){
-    cout<<fact(5);
+    cout<<fact(3);
 }
