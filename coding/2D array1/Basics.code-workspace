@@ -1,0 +1,53 @@
+{
+	"folders": [
+		{
+			"path": "../C++/Basics"
+		},
+		{
+			"path": "../ternaryswitch"
+		},
+		{
+			"path": "../input/ifelse"
+		},
+		{
+			"path": "../loops"
+		},
+		{
+			"path": "../loops 2"
+		},
+		{
+			"path": "../loops 1"
+		},
+		{
+			"path": "../pattern printing 1"
+		},
+		{
+			"path": "../pattern printing 2"
+		},
+		{
+			"path": "../functions"
+		},
+		{
+			"path": "../pointers"
+		},
+		{
+			"path": "../array1"
+		},
+		{
+			"path": "../array2"
+		},
+		{
+			"path": "../Revision"
+		},
+		{
+			"path": "../array 3"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../2d array 2"
+		}
+	],
+	"settings": {}
+}
