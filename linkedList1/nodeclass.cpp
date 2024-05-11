@@ -6,7 +6,7 @@ class Node{
         Node *next;
         Node(int value){
             this->value=value;
-            this->next=next;
+            this->next=NULL;
         }
 };
 int main(){
@@ -15,9 +15,15 @@ int main(){
     Node c(6);
     a.next=&b;
     b.next=&c;
-    //b ka use karke b ka value print karana
-    cout<<b.value<<endl;
-    //bina b ka use kiye b ka value print karana 
-    cout<<a.next->value<<endl;
-    cout<<((a.next)->next)->value<<endl;
+   // c.next=NULL;
+    // //b ka use karke b ka value print karana
+    // cout<<b.value<<endl;
+    // //bina b ka use kiye b ka value print karana 
+    // cout<<a.next->value<<endl;
+    // cout<<((a.next)->next)->value<<endl;
+    Node temp = a;
+    while(temp.next!=NULL){
+        cout<<temp.value<<" ";
+        temp = *(temp.next) ;
+    }
 }
