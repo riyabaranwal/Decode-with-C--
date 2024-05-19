@@ -17,7 +17,11 @@ int main(){
     cout<<max<<endl;
     int smax=INT_MIN;
      for(int i=0;i<=n-1;i++){
-      if(smax<arr[i] && max!=arr[i]) smax=arr[i];
+      if( arr[i]<max ){
+        if(smax<arr[i]){
+         smax=arr[i];
+        }
+      }
     }
     cout<<smax;
 }
