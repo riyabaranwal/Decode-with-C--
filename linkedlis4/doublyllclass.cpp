@@ -165,8 +165,8 @@ int main()
     cout << "Size : " << ll.size << endl;
     // ll.deleteAtHead();
     // ll.display();
-    // ll.deleteAtTail();
-    // ll.display();
+    ll.deleteAtTail();
+    ll.display();
     ll.deleteAtIdx(3);
     ll.display();
 }

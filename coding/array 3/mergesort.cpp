@@ -38,6 +38,21 @@ vector<int> merge(vector<int> &arr1, vector<int> &arr2)
     }
     return res;
 }
+void mergesort(vector<int> &v){
+    int n = v.size();
+    if(n==1) return;
+    int n1 = n/2 , n2 = n-n/2;
+    vector<int>a(n1),b(n2);
+    for(int i = 0 ; i < n1 ; i++){
+        a[i] = v[i];
+    }
+     for(int i = n1+1 ; i < n2 ; i++){
+        b[i] = v[i];
+    }
+    mergesort(a);
+    mergesort(b);
+    merge(a,b);
+}
 int main()
 {
     vector<int> arr1;
