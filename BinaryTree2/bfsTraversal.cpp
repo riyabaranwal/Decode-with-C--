@@ -50,8 +50,12 @@ void levelOrder(Node* root){
     for(int i = 1; i <= n ; i++){
         // nthLevel(root,1,i);
         // cout<<endl;
+        if(i%2==0){
         nthLevelReverse(root , 1 , i);
-        cout<<endl;
+        }
+        else{
+           nthLevel(root,1,i); 
+        }
 
 
     }
@@ -69,6 +73,37 @@ void levelOrderQueue(Node *root){
     cout<<endl;
 
 }
+void levelOrderQueuereverse(Node *root){
+    queue<Node*> q;
+    q.push(root);
+    while(q.size()>0){
+        Node *temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->right !=NULL)q.push(temp->right);
+        if(temp->left !=NULL)q.push(temp->left);
+    }
+    cout<<endl;
+
+}
+
+// void rightview(Node *root){
+//     queue<Node*> q;
+//     vector<Node*>v;
+//     q.push(root);
+//     while(q.size()>0){
+//         int  = q.size();
+//         for(int i = 0 ; i < n; i++){
+//         Node *temp = q.front();
+//         v.push_back(temp);
+//         q.pop();
+//         }
+//         cout<<temp->val<<" ";
+//         if(temp->right !=NULL)q.push(temp->right);
+//          else q.push(temp->left);
+//     }
+//     cout<<endl;
+// }
 
 int main()
 {
@@ -78,13 +113,15 @@ int main()
     Node *d = new Node(4);
     Node *e = new Node(5);
     Node *f = new Node(6);
-    Node *g = new Node(77);
+  //  Node *g = new Node(77);
     a->left = b;
     a->right = c;
     b->left = d;
     b->right = e;
     c->left = f;
-    c->right = g;
+   // c->right = g;
     //nthLevel(a,1,1);
-    levelOrder(a);
+    levelOrderQueuereverse(a);
+    cout<<endl;
+    
 }
