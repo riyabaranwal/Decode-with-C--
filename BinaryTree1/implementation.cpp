@@ -32,7 +32,8 @@ int maximumval(Node *root)
 {
     if (root == NULL)
         return INT_MIN;
-    return max(root->val, max(maximumval(root->left), maximumval(root->right)));
+    // return max(root->val, max(maximumval(root->left), maximumval(root->right)));
+     return max({root->val, maximumval(root->left), maximumval(root->right)});
 }
 int noOfLevel(Node *root)
 {
@@ -58,7 +59,7 @@ int main()
     Node *a = new Node(1);
     Node *b = new Node(2);
     Node *c = new Node(3);
-    Node *d = new Node(4);
+    Node *d = new Node(84);
     Node *e = new Node(5);
     Node *f = new Node(6);
     Node *g = new Node(77);
@@ -70,12 +71,12 @@ int main()
     c->right = g;
     displayTree(a);
     cout << endl;
-    cout << sumTreeNodess(a);
-    cout << endl;
-    cout << size(a);
+    // cout << sumTreeNodess(a);
+    // cout << endl;
+    // cout << size(a);
     cout << endl;
     cout << maximumval(a);
-    cout << endl;
-    cout << noOfLevel(a);
+    // cout << endl;
+    // cout << noOfLevel(a);
 }
 
