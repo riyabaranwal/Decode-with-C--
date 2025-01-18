@@ -1,11 +1,9 @@
-//for any path
 #include<iostream>
 #include<vector>
 #include<list>
 #include<unordered_set>
 using namespace std;
 vector<list<int> >graph;
-unordered_set<int>visited;
 int v;//no. of vertices
 void add_edge(int src , int dest, bool bi_dir = true){
     graph[src].push_back(dest);
@@ -13,30 +11,31 @@ void add_edge(int src , int dest, bool bi_dir = true){
         graph[dest].push_back(src);
     } 
 } 
-bool dfs(int curr , int end){
-    if(curr == end){
-        return true;
+void dfs(int node , unordered_set<int>& visited){
+    visited.insert(node);
+    for(auto neighbour: graph[node]){
+        if(visited.count(neighbour)==0){
+            dfs(neighbour,visited);
+        }
     }
-    visited.insert(curr);
-    for(auto neighbour: graph[curr]){
-      if(not visited.count(neighbour)){
-        bool result = dfs(neighbour,end);
-          if(result){
-              return true;
-          }
-      }
-    }
-    return false;
 }
-bool anyPath(int src , int dest){
-    return dfs(src,dest);
+int connected_components(){
+    int result = 0 ;
+    unordered_set<int> visited;
+    for(int i = 0 ; i < v ; i++){
+        //go to every vertex
+        if(visited.count(i)==0){
+            result++;
+            dfs(i,visited);
+
+        }
+    }
 }
 int main(){
     cin>>v;
     graph.resize(v, list<int>());
     int e;
     cin>>e;
-    visited.clear();
     while (e--)
     {
         int src, dest;
@@ -45,7 +44,5 @@ int main(){
         add_edge(src, dest,false);//weighted graph
 
     }
-    int x,y;
-    cin>>x>>y;
-    cout<<anyPath(x,y)<<endl;
+    
 }

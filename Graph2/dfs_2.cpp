@@ -32,6 +32,7 @@ void dfs(int curr , int end, vector<int>&path){
    path.pop_back();
    visited.erase(curr);
 }
+
 void allPath(int src , int dest){
     vector<int>path;
      dfs(src,dest,path);
